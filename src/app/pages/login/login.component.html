@@ -22,6 +22,31 @@
         #email="ngModel"
         [ngClass]="{ 'mat-error': email.invalid && email.touched }"
       />
+      <mat-error *ngIf="email.touched">Email is required</mat-error>
+      <mat-error *ngIf="email.invalid">
+        Please enter a valid email address
+      </mat-error>
     </mat-form-field>
+
+    <mat-form-field appearance="fill" style="width: 100%">
+      <mat-label>Password</mat-label>
+      <input
+        matInput
+        [(ngModel)]="userData.password"
+        type="password"
+        name="password"
+        required
+        #password="ngModel"
+        [ngClass]="{ 'mat-error': password.invalid && password.touched }"
+      />
+      <mat-error *ngIf="password.touched">Password is required</mat-error>
+    </mat-form-field>
+
+    <button
+      mat-raised-button
+      color="accent"
+      type="submit"
+      [disabled]="!loginForm.valid"
+    ></button>
   </form>
 </mat-card>
