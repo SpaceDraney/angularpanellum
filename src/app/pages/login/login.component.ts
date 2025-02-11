@@ -32,8 +32,8 @@ export class LoginComponent {
 
   constructor(
     private authService: AuthService,
-    private snackBar: MatSnackBar,
-    private router: Router
+    private router: Router,
+    private snackBar: MatSnackBar
   ) {}
 
   onSubmit() {
