@@ -1,1 +1,27 @@
-<p>login works!</p>
+<mat-card class="mat-card-login">
+  <mat-toolbar color="primary"></mat-toolbar>
+
+  <form
+    #loginForm="ngForm"
+    (ngSubmit)="onSubmit()"
+    style="
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    "
+  >
+    <mat-form-field appearance="fill" style="width: 100%">
+      <mat-label>Email</mat-label>
+      <input
+        matInput
+        [(ngModel)]="userData.email"
+        type="email"
+        name="email"
+        required
+        #email="ngModel"
+        [ngClass]="{ 'mat-error': email.invalid && email.touched }"
+      />
+    </mat-form-field>
+  </form>
+</mat-card>
